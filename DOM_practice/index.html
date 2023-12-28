@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+      name="viewport"
+    />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+    <title>Document</title>
+    <script defer src="main.js"></script>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        text-align: center;
+      }
+
+      .d1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+      }
+
+      button {
+        max-width: fit-content;
+      }
+
+      .newClass {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="openNewWindow()">Curious?</button>
+
+    <!-- basic-->
+    <div class="d1">
+      <div id="myDiv">Experiment on this div.</div>
+      <div id="myDiv2">Hellow World.</div>
+      <button id="myButton">myButton</button>
+      <button onclick="removeElement()">Remove div</button>
+      <button onclick="addNewElement()">Add a new p tag</button>
+      <button onclick="changeStyle()">change style of div</button>
+      <button onclick="addClass()">add new class</button>
+      <button onclick="removeClass()">remove new class</button>
+      <button onclick="toggleClass()">toggle class</button>
+    </div>
+
+    <!--  practice nodes-->
+    <div>
+      <button onclick="createNewNode()">createNewNode</button>
+      <button onclick="_cloneNode()">cloneNode</button>
+      <button onclick="_replaceNode()">replaceNode</button>
+    </div>
+  </body>
+</html>
