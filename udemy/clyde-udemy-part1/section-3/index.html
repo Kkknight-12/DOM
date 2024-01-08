@@ -33,7 +33,80 @@
       .newClass {
         border: 1px solid red;
       }
+      hr {
+        border-top: 1px solid black;
+        width: 100%;
+        max-width: 500px;
+      }
+      p {
+        font-size: 18px;
+      }
+      .box {
+        width: 100%;
+        max-width: 500px;
+        padding: 10px;
+        background-color: #f1f1f1;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     </style>
   </head>
-  <body></body>
+  <body>
+    <div>
+      <h1 id="main">Accessing Elements</h1>
+      <hr />
+
+      <!--     Section 1 -->
+      <div style="margin-top: 70px">
+        <h2>Using the id ( #header )</h2>
+        <div class="box">
+          Access this by using <strong>getElementById()</strong>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+    <!--   Section 2 -->
+    <div>
+      <h2>Using the class ( .header )</h2>
+      <div class="header box">
+        Access this by using <strong>getElementByClassName()</strong>
+      </div>
+    </div>
+
+    <hr />
+    <!--   Section 3 -->
+    <div>
+      <h2>Using the Tag ( paragraph tag )</h2>
+      <p class="box">
+        1. Access this by using <strong>getElementByTagName()</strong>
+      </p>
+      <p class="box">
+        2. Access this by using <strong>getElementByTagName()</strong>
+      </p>
+    </div>
+
+    <hr />
+    <!--   Section 4 -->
+    <div>
+      <h2>Using the Query selector ( with ID of 'query' )</h2>
+      <p id="query" class="box">
+        Access this by using <strong>querySelector()</strong>
+      </p>
+    </div>
+
+    <hr />
+    <!--   Section 4 -->
+    <div>
+      <h2>Using the Query selector All ( with ID of 'query-all' )</h2>
+      <p class="query-all box">
+        1. Access this by using <strong>querySelectorAll()</strong>
+      </p>
+      <p class="query-all box">
+        2. Access this by using <strong>querySelectorAll()</strong>
+      </p>
+    </div>
+  </body>
 </html>
