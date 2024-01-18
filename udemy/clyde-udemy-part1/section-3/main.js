@@ -53,3 +53,12 @@ console.dir(document)
  *
  * Everything you see is the element
  * */
+
+// -----------------------------------------------------------------------------
+
+// 1. Accessing the DOM with getElementById
+
+const header = document.getElementById('header')
+header.style.backgroundColor = 'lightblue'
+
+//
