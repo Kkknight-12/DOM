@@ -18,21 +18,10 @@
         text-align: center;
       }
 
-      .d1 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        text-align: center;
-      }
-
       button {
         max-width: fit-content;
       }
 
-      .newClass {
-        border: 1px solid red;
-      }
       hr {
         border-top: 1px solid black;
         width: 100%;
@@ -48,8 +37,11 @@
         background-color: #f1f1f1;
         border: 1px solid black;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        /* justify-content: center; */
+        /* align-items: center; */
+        list-style: none;
       }
     </style>
   </head>
@@ -71,9 +63,14 @@
     <!--   Section 2 -->
     <div>
       <h2>Using the class ( .header )</h2>
-      <div class="header box">
-        Access this by using <strong>getElementByClassName()</strong>
-      </div>
+      <ul class="box">
+        <li class="header">
+          Access this by using <strong>getElementsByClassName()</strong>
+        </li>
+        <li class="header">
+          Access this by using <strong>getElementsByClassName()</strong>
+        </li>
+      </ul>
     </div>
 
     <hr />
@@ -92,21 +89,21 @@
     <!--   Section 4 -->
     <div>
       <h2>Using the Query selector ( with ID of 'query' )</h2>
-      <p id="query" class="box">
+      <div id="query" class="box">
         Access this by using <strong>querySelector()</strong>
-      </p>
+      </div>
     </div>
 
     <hr />
     <!--   Section 4 -->
     <div>
       <h2>Using the Query selector All ( with ID of 'query-all' )</h2>
-      <p class="query-all box">
+      <div class="query-all box">
         1. Access this by using <strong>querySelectorAll()</strong>
-      </p>
-      <p class="query-all box">
+      </div>
+      <div class="query-all box">
         2. Access this by using <strong>querySelectorAll()</strong>
-      </p>
+      </div>
     </div>
   </body>
 </html>

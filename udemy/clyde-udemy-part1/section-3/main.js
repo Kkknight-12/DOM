@@ -37,7 +37,7 @@ console.dir(document)
 // Understanding the DOM tree
 
 /*
- * DOM is often refered as DOM TREE
+ * DOM is often referred as DOM TREE
  * this tree consists of millions of objects called nodes, each node
  * represent an HTML element. The root node is the document object.
  * The root node is the document object, the document object is the parent
@@ -61,4 +61,46 @@ console.dir(document)
 const header = document.getElementById('header')
 header.style.backgroundColor = 'lightblue'
 
-//
+// check the type of Node
+console.log(header.nodeType) // 1
+// 1 means element node
+
+console.log(header.nodeName) // Div
+// Div is the name of the element
+
+// NOTE: id is unique, so we can only have one element with the same id
+
+// -----------------------------------------------------------------------------
+
+// 2. Accessing the DOM with getElementsByClassName
+
+const items = document.getElementsByClassName('header')
+
+console.log(items) // HTMLCollection [li.header, li.header]
+
+console.log(items[0]) // <div class="header"></div>
+
+// getElementsByClassName return an HTMLCollection
+// which is an array like object, so we can access the element
+// by using index number
+
+for (let i = 0; i < items.length; i++) {
+  items[i].style.backgroundColor = 'lightblue'
+}
+
+// -----------------------------------------------------------------------------
+
+// 3. Accessing the DOM with getElementsByTagName
+// this method searches through all nodes, finding those with a specified
+// tag name
+// for this reason it can be performance heavy
+// it return list of live HTMl collection, which is an array like object
+
+const pTags = document.getElementsByTagName('p')
+console.log(pTags) // HTMLCollection(2) [p.box, p.box]
+
+for (let i = 0; i < pTags.length; i++) {
+  pTags[i].style.backgroundColor = 'lightyellow'
+}
+
+// -----------------------------------------------------------------------------
