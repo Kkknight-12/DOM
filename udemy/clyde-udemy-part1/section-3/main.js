@@ -15,6 +15,9 @@
  * - the browser give us access to this structure via DOM API
  * - DOM API gives us many methods to access the DOM
  * - we use javascript to execute these methods
+ *
+ * HTMLCollection vs NodeList
+ * https://www.freecodecamp.org/news/dom-manipulation-htmlcollection-vs-nodelist/
  * */
 
 console.log('document', document) //
@@ -61,10 +64,12 @@ console.dir(document)
 const header = document.getElementById('header')
 header.style.backgroundColor = 'lightblue'
 
+// nodeType
 // check the type of Node
 console.log(header.nodeType) // 1
 // 1 means element node
 
+// nodeName
 console.log(header.nodeName) // Div
 // Div is the name of the element
 
@@ -73,6 +78,9 @@ console.log(header.nodeName) // Div
 // -----------------------------------------------------------------------------
 
 // 2. Accessing the DOM with getElementsByClassName
+// this method returns a collection of all elements in the document with
+// the specified class name
+// it return an HTMLCollection, which is an array like object
 
 const items = document.getElementsByClassName('header')
 
@@ -100,7 +108,31 @@ const pTags = document.getElementsByTagName('p')
 console.log(pTags) // HTMLCollection(2) [p.box, p.box]
 
 for (let i = 0; i < pTags.length; i++) {
-  pTags[i].style.backgroundColor = 'lightyellow'
+  pTags[i].style.color = 'darkorange'
 }
 
 // -----------------------------------------------------------------------------
+
+// 3. Accessing the DOM with querySelector
+// querySelector is a method that returns the first element that matches
+// a specified CSS selector in the document
+// it return an element object
+
+const divWithId = document.querySelector('#query')
+divWithId.style.color = 'darkblue'
+
+// -----------------------------------------------------------------------------
+
+// 4. Accessing the DOM with querySelectorAll
+// querySelectorAll is a method that returns all elements in the document
+// that matches a specified CSS selector
+// it return a NodeList
+
+const allDivs = document.querySelectorAll('.query-all')
+console.log('querySelectorAll ', allDivs)
+// NodeList(2) [ div.query-all.box, div.query-all.box ]
+
+for (let i = 0; i < allDivs.length; i++) {
+  allDivs[i].style.backgroundColor = 'lightyellow'
+  allDivs[i].style.color = 'darkred'
+}
